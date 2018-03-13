@@ -1,0 +1,38 @@
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+input {
+    width: 300px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 4px 10px;
+}
+
+button {
+    padding: 3px 20px;
+    border: 2px solid rgb(180, 65, 225);
+    margin-left: 20px;
+    font-size: 20px;
+    background: rgb(42, 157, 165);
+    border-radius: 15px;
+}
+
+span {
+    padding-left: 20px;
+    color: rebeccapurple;
+    font-size: 25px;
+}
+
+button:hover {
+    background: black;
+    color: royalblue
+}
+
+input:hover {
+    background: bisque;
+}

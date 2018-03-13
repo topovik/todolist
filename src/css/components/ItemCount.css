@@ -1,0 +1,29 @@
+.count {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.score {
+    box-sizing: border-box;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.Item {
+    background-color: aqua;
+    margin-left: 200px;
+
+}
+
+.ItemDone {
+    margin-left: 200px;
+    background-color: red;
+    color: red;
+
+}
+.ItemDone:hover {
+    background: red;
+    color: red;
+}

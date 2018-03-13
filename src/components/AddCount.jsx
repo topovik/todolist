@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ItemCount from './ItemCount'
+import '../css/components/AddCount.css'
 
 class AddCount extends Component {
     constructor(props) {
@@ -7,6 +9,7 @@ class AddCount extends Component {
         this.state = {
             textName: '',
             textNumber: 0
+
         }
 
             this.onChangeName = this.onChangeName.bind(this)
@@ -16,11 +19,11 @@ class AddCount extends Component {
 
     render() {
         return(
-            <React.Fragment>
-                <input value={this.state.textName} onChange={this.onChangeName} type="text"/>
-                <input value={this.state.textNumber} onChange={this.onChangeNumber} type="number"/>
-                <button onClick={this.onClickAddCount}>Add</button>
-            </React.Fragment>
+            <section className='head'>
+               <span>Items:</span> <input value={this.state.textName} onChange={this.onChangeName} type="text"/>
+               <span>Count:</span> <input value={this.state.textNumber} onChange={this.onChangeNumber} type="number"/>
+               <button onClick={this.onClickAddCount}>Add</button>
+            </section>
         )
     }
 
@@ -31,6 +34,8 @@ class AddCount extends Component {
         onChangeNumber(event) {
             this.setState({textNumber: event.target.value})
         }
+
+
 
         onClickAddCount() {
             this.props.onClickTodoList(this.state.textName, this.state.textNumber)

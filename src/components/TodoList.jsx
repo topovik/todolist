@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
 import AddCount from './AddCount'
 import RemoveCount from './RemoveCount'
+import ItemCount from './ItemCount'
+import '../css/components/TodoList.css'
+
+
 
 class TodoList extends Component {
     constructor(props) {
@@ -15,16 +19,21 @@ class TodoList extends Component {
     }
 
         render() {
-            const TodoItems = this.state.items.map((element, index) => 
-                <p>
-                    {element.textName + element.textNumber}
-                    <RemoveCount delete={this.onRemoveCount} todo={this.state.items}/>
-                </p>
+            const TodoItems = this.state.items.map(t => 
+                <section className='section' key={t.id}>
+                    <div className='name'>{t.textName}</div>
+                    <div><ItemCount textNumber={t.textNumber}/></div>
+                    <div className='number'>{t.textNumber}</div>
+                    <RemoveCount delete={this.onRemoveCount} todo={t}/>                 
+                </section>
             )
+
 
             return(
                 <React.Fragment>
-                    <AddCount onClickTodoList={this.onClickCount}/>
+                    <div className='header'>
+                        <AddCount onClickTodoList={this.onClickCount}/>
+                    </div>
                     {TodoItems}
                 </React.Fragment>
             )
@@ -32,15 +41,17 @@ class TodoList extends Component {
 
 onClickCount(textName, textNumber) {
     const copy = [...this.state.items]
-    copy.push({textName, textNumber})
+    copy.push({id: this.state.items.length + 1, textName, textNumber})
     this.setState({items: copy})
 } 
 
-onRemoveCount(name, i) {
+onRemoveCount(id) {
+    const index = this.state.items.findIndex(t => t.id === id)
     const copy2 = [...this.state.items]
-    copy2.splice(i, 1)
+    copy2.splice(index, 1)
     this.setState({items: copy2})
 }
+
 
 }
 

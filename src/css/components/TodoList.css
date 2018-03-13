@@ -1,0 +1,30 @@
+.section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background: forestgreen;
+    margin-top: 10px;
+    border: 2px solid black;
+}
+
+.name {
+    font-size: 35px;
+    font-weight: bold;
+    color: brown;
+    padding: 40px 0 40px 20px;
+}
+
+.header {
+    background: hotpink;
+    padding: 10px;
+}
+
+.number {
+    box-sizing: border-box;
+    font-size: 35px;
+    font-weight: bold;
+    width: 0;
+}
+

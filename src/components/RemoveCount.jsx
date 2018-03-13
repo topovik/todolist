@@ -1,29 +1,20 @@
 import React, { Component } from 'react'
+import '../css/components/RemoveCount.css'
 
 class RemoveCount extends Component {
     constructor(props) {
         super(props)
 
-        this.onRemove = this.onRemove.bind(this)
+
+    }
+    render() {
+        return(
+            <section>           
+                <button className='button1' onClick={() => this.props.delete(this.props.todo.id)}>Remove</button> 
+            </section>
+        )     
     }
 
 
-    render() {
-        return(
-            <React.Fragment>
-
-                <button onClick={this.onRemove}>remove
-              </button>
-
-            </React.Fragment>
-        )
-    
-  
-       
 }
-onRemove(item, i) {
-    this.props.delete(item, i)
-}
-}
-
 export default RemoveCount
